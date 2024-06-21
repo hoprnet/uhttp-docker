@@ -55,6 +55,7 @@ services:
   hopr-admin:
     image: "${HOPR_ADMIN_IMAGE}"
     restart: unless-stopped
+    platform: linux/amd64
     container_name: admin
     hostname: admin
     ports:
@@ -96,6 +97,7 @@ services:
   nodeexporter:
     image: "${METRICS_NODE_EXPORTER_IMAGE}"
     restart: unless-stopped
+    platform: linux/amd64
     container_name: nodeexporter
     hostname: nodeexporter
     volumes:
@@ -126,6 +128,7 @@ services:
   prometheus:
     image: "${PROMETHEUS_IMAGE}"
     restart: always
+    platform: linux/amd64
     container_name: prometheus
     hostname: prometheus
     depends_on:
@@ -151,6 +154,7 @@ services:
 
   grafana:
     image: "${GRAFANA_IMAGE}"
+    platform: linux/amd64
     user: '472'
     restart: always
     environment:
