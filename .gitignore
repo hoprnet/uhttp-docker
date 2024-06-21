@@ -1,0 +1,5 @@
+.env-secrets
+.env
+hopr.id
+hoprd-db
+node_modules/

@@ -1,0 +1,27 @@
+{
+  "name": "uhttp-docker",
+  "version": "1.0.0",
+  "description": "Runs a uhttp using docker compose",
+  "main": "exit-app-create-keypair.js",
+  "scripts": {
+    "create-keypair": "node exit-app-create-keypair.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoprnet/uhttp-docker.git"
+  },
+  "keywords": [
+    "hopr",
+    "privacy",
+    "vpn"
+  ],
+  "author": "HOPR Association <tech@hoprnet.org>",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/hoprnet/uhttp-docker/issues"
+  },
+  "homepage": "https://github.com/hoprnet/uhttp-docker#readme",
+  "dependencies": {
+    "ethers": "^6.13.1"
+  }
+}
