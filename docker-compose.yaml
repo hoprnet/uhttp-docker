@@ -155,6 +155,8 @@ services:
   grafana:
     image: "${GRAFANA_IMAGE}"
     platform: linux/amd64
+    container_name: grafana
+    hostname: grafana
     user: '472'
     restart: always
     environment:
@@ -176,6 +178,7 @@ services:
   uhttp-exit-app:
     image: "${UHTTP_EXITAPP_IMAGE}"
     restart: always
+    platform: linux/amd64
     container_name: uhttp-exit-app
     hostname: uhttp-exit-app
     networks:

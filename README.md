@@ -67,7 +67,7 @@ The default hoprd endpoint will be http://localhost:3001 being HOPRD_API_PORT=30
 COMPOSE_PROFILES=hoprd,metrics-vis docker compose up -d
 ```
 To acess Prometheus go to: http://localhost:9090 being PROMETHEUS_PORT=9090
-To access Grafana go to: http://localhost:3030 being GRAFANA_PORT=3030.
+To access Grafana go to: http://localhost:3030/dashboards being GRAFANA_PORT=3030.
 Grafana credentials are stored in ./grafana/config.monitoring
 
 4. Run hopr node with an external monitoring system using Prometheus pushgateway
