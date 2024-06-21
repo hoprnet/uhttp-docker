@@ -21,8 +21,10 @@ The `docker compose` deployment is multi-faceted allowing different combinations
   - Set your safe address created in the onboarding process at `hopr.safe_module.safe_address`
   - Set your module address created in the onboarding process at `hopr.safe_module.module_address`
 - The Hoprd identity file should be located at `./hopr.id`
-- Create your private and public key for the ExitApp
-  
+- Setup the exit-app:
+    - Generate the private-public key and update the `.env-secrets` file accordingly
+    - Send your public key to **uhttp@hoprnet.org** and request access to the discovery platform
+    - The support team will register your public key and grant you access to the discovery platform by providing you an access token which you will need to place in `.env-secrets` file.  
 
 ### Profiles
 
