@@ -23,10 +23,10 @@ Follow the instructions on how to setup a [hoprd node](./hoprd-node/README.md). 
 ## Setup exit-app
 
 - Copy the `.env.sample` file into `.env` and override with your custome values.
-- Copy the `.env-secrets.sample` file into `.env-secrets` and override all parameters with your custom values.
-- Generate the private-public key and update the `.env-secrets` file accordingly
+- Follow instructions at [exit-app-create-keypair](./exit-app-create-keypair/README.md) to generate private-public key pair.
+- Copy the `.env-secrets.sample` file into `.env-secrets` and override all parameters with your custom values and generated key pair.
 - Send your public key to **uhttp@hoprnet.org** and request access to the discovery platform
-- The support team will register your public key and grant you access to the discovery platform by providing you an access token which you will need to place in `.env-secrets` file.  
+- The support team will register your public key and grant you access to the discovery platform by providing you an access token which you will need to place in `.env-secrets` file.
 
 ### Profiles
 
@@ -47,5 +47,3 @@ COMPOSE_PROFILES=exit-app docker compose up -d
 ```
 
 The same list of `COMPOSE_PROFILES` should be supplied for the `docker compose down` command.
-
-
