@@ -23,7 +23,7 @@ Follow the instructions on how to setup a [hoprd node](./hoprd-node/README.md). 
 ## Setup exit-app
 
 - Copy the `.env.sample` file into `.env` and override with your custome values.
-- Follow instructions at [exit-app-create-keypair](./exit-app-create-keypair/README.md) to generate private-public key pair.
+Follow the instructions at [exit-app-create-keypair](./exit-app-create-keypair/README.md) to generate a private-public key pair.
 - Copy the `.env-secrets.sample` file into `.env-secrets` and override all parameters with your custom values and generated key pair.
 - Send your public key to **uhttp@hoprnet.org** and request access to the discovery platform
 - The support team will register your public key and grant you access to the discovery platform by providing you an access token which you will need to place in `.env-secrets` file.
