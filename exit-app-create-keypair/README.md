@@ -1,6 +1,6 @@
 # Setup
 
-This uses [ethers](https://docs.ethers.org/v6/) to generate a private-public key pair for uHTTP exit application.
+This uses [ethers](https://docs.ethers.org/v6/) to generate a private-public key pair for the uHTTP exit application.
 
 ## Generation
 
