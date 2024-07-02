@@ -3,3 +3,4 @@
 hopr.id
 hoprd-node
 node_modules/
+.direnv/
