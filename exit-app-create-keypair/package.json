@@ -1,0 +1,9 @@
+{
+  "name": "exit-app-create-keypair",
+  "description": "generate key pair for usage in uHTTP exit application",
+  "main": "generate.js",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "ethers": "^6.13.1"
+  }
+}
