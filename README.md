@@ -14,11 +14,12 @@ Execute the following commands:
 ```
 wget -O hoprd-node.zip https://github.com/hoprnet/hoprnet/archive/refs/heads/master.zip
 unzip hoprd-node.zip "hoprnet-*/deploy/*" -d hoprd-node
-mv hoprd-node/hoprnet-*/deploy/compose/{*,.*} hoprd-node
+mv hoprd-node/hoprnet-*/deploy/compose/{*,.[!.]*} hoprd-node
 rm -rf hoprd-node.zip hoprd-node/hoprnet-*
 ```
 
-Follow the instructions on how to setup a [hoprd node](./hoprd-node/README.md). Keep in mind to execute the commands mentioned in that guide within the `hoprd-node` folder.
+Follow the instructions on how to setup a [hoprd node](./hoprd-node/README.md).
+Keep in mind to execute the commands mentioned in that guide within the `hoprd-node` folder.
 
 ## Setup exit-app
 
