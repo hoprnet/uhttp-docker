@@ -12,7 +12,7 @@ This repository contains the artifacts needed to deploy uHTTP using docker compo
 Execute the following commands:
 
 ```
-wget -O hoprd-node.zip https://github.com/hoprnet/hoprnet/archive/refs/heads/master.zip
+wget -O hoprd-node.zip https://github.com/hoprnet/hoprnet/archive/refs/heads/este/compose.zip
 unzip hoprd-node.zip "hoprnet-*/deploy/*" -d hoprd-node
 mv hoprd-node/hoprnet-*/deploy/compose/{*,.[!.]*} hoprd-node
 rm -rf hoprd-node.zip hoprd-node/hoprnet-*
