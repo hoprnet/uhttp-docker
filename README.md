@@ -1,6 +1,6 @@
-# uhttp docker setup
+# uHTTP exit gateway
 
-This repository contains the artifacts needed to deploy uHTTP using docker compose
+This repository contains the artifacts needed to deploy uHTTP alongside hoprd and hopr-admin using docker compose.
 
 ## Requirements
 

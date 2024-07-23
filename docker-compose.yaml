@@ -29,7 +29,6 @@ services:
       - RUST_BACKTRACE=full
       - HOPRD_CONFIGURATION_FILE_PATH=/app/hoprd.cfg.yaml
       - HOPRD_API_PORT=3001
-      # - OPENTELEMETRY_COLLECTOR_URL=http://server.
     volumes:
       - hoprd_data/:/app/
     deploy:
@@ -44,21 +43,40 @@ services:
         max-size: "${HOPRD_LOG_MAX_SIZE}"
         max-file: 5
 
+  hopr-admin:
+    image: "${HOPR_ADMIN_IMAGE}"
+    restart: unless-stopped
+    platform: ${DOCKER_PLATFORM}
+    container_name: admin
+    hostname: admin
+    networks:
+      - hoprnet
+    ports:
+      - "${HOPR_ADMIN_PORT}:80"
+    deploy:
+      resources:
+        reservations:
+          memory: "${HOPR_ADMIN_MEM_REQUEST}"
+        limits:
+          memory: "${HOPR_ADMIN_MEM_LIMIT}"
+
   uhttp-exit-app:
-    image: "${UHTTP_EXITAPP_IMAGE}"
-    restart: always
-    platform: linux/amd64
+    image: HTTP_EXITAPP_IMAGE}"
+    restart: unless-stopped
+    platform: ${DOCKER_PLATFORM}
     container_name: uhttp-exit-app
     hostname: uhttp-exit-app
     networks:
-      - hoprd-node_hoprnet
+      - hoprnet
+    env_file:
+      - .env-secrets
     environment:
       - "DEBUG=*"
       - "UHTTP_EA_DATABASE_FILE=/app/db/store.sqlite3"
-    env_file:
-      - .env-secrets
+      - "UHTTP_EA_HOPRD_ENDPOINT=http://hoprd:${HOPRD_API_PORT}"
+
     volumes:
-      - exitapp_data:/app/db
+      - exit-app_data:/app/db
     deploy:
       resources:
         reservations:
@@ -70,20 +88,3 @@ services:
       options:
         max-size: "100m"
         max-file: "7"
-
-  hopr-admin:
-    image: "${HOPR_ADMIN_IMAGE}"
-    restart: unless-stopped
-    platform: ${DOCKER_PLATFORM}
-    container_name: admin
-    hostname: admin
-    ports:
-      - "${HOPR_ADMIN_PORT}:80"
-    networks:
-      - hoprnet
-    deploy:
-      resources:
-        reservations:
-          memory: "${HOPR_ADMIN_MEM_REQUEST}"
-        limits:
-          memory: "${HOPR_ADMIN_MEM_LIMIT}"
