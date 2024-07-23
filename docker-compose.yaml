@@ -4,7 +4,7 @@ networks:
     driver: bridge
 
 volumes:
-  exitapp_data: {}
+  exit-app_data: {}
   hoprd_data: {}
 
 services:
@@ -30,7 +30,7 @@ services:
       - HOPRD_CONFIGURATION_FILE_PATH=/app/hoprd.cfg.yaml
       - HOPRD_API_PORT=3001
     volumes:
-      - hoprd_data/:/app/
+      - hoprd_data:/app/
     deploy:
       resources:
         reservations:
@@ -61,7 +61,7 @@ services:
           memory: "${HOPR_ADMIN_MEM_LIMIT}"
 
   uhttp-exit-app:
-    image: HTTP_EXITAPP_IMAGE}"
+    image: "${UHTTP_EXITAPP_IMAGE}"
     restart: unless-stopped
     platform: ${DOCKER_PLATFORM}
     container_name: uhttp-exit-app
