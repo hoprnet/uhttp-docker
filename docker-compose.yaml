@@ -30,7 +30,7 @@ services:
       - HOPRD_CONFIGURATION_FILE_PATH=/app/hoprd.cfg.yaml
       - HOPRD_API_PORT=3001
     volumes:
-      - hoprd_data:/app/
+      - ./hoprd_data:/app/
     deploy:
       resources:
         reservations:
@@ -78,7 +78,7 @@ services:
       - "UHTTP_EA_HOPRD_ENDPOINT=http://hoprd:${HOPRD_API_PORT}"
 
     volumes:
-      - exit-app_data:/app/db
+      - ./exit-app_data:/app/db
     deploy:
       resources:
         reservations:
