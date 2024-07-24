@@ -62,6 +62,8 @@ services:
 
   uhttp-exit-app:
     image: "${UHTTP_EXITAPP_IMAGE}"
+    depends_on:
+      - hoprd
     restart: unless-stopped
     platform: ${DOCKER_PLATFORM}
     container_name: uhttp-exit-app
