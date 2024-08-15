@@ -47,6 +47,7 @@ services:
   hopr-admin:
     image: "${HOPR_ADMIN_IMAGE}"
     restart: unless-stopped
+    pull_policy: always
     platform: ${DOCKER_PLATFORM}
     container_name: admin
     hostname: admin
@@ -66,6 +67,7 @@ services:
     depends_on:
       - hoprd
     restart: unless-stopped
+    pull_policy: always
     platform: ${DOCKER_PLATFORM}
     container_name: uhttp-exit-app
     hostname: uhttp-exit-app
